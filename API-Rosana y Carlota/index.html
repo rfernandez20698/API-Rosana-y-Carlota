@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
     <script type="module" src="./js/script.js"></script>
-    
+
 </head>
+
 <body>
-    <img src="./globe-308065_960_720.webp" alt="">
-    <input type="text" id="name" placeholder="Lugar">
+   
+
+    <div>
+        <button id="buscadorporpais">Buscar capital por país</button>
+        <img src="./globe-308065_960_720.webp" alt="">
+
+        <div id="hola">
+            <p class="info">Para buscar la capital de un país, introduce el nombre del país en INGLÉS.</p>
+
+            <input type="text" id="paisname" placeholder="País">
+            <button id="buscarporpais">Buscar</button>
+            <div id="resultado2">
+                <h1 id="pais2"></h1>
+                <p id="capital2"></p>
+                <p id="population2"></p>
+                <p id="tourists2"></p>
+                <p id="moneda2"></p>
+                <p id="region2"></p>
+                <p id="unemployment2"></p>
+                <p id="co2_emissions"></p>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div id="buscarporciudad">
+    <input type="text" id="name" placeholder="Ciudad">
 
     <button id="añadir">Buscar</button>
-  
-    <div id="resultado">
-    <p id="ciudad"></p>
-    <p id="pais"></p>
-    <p id="latitud"></p>
-    <p id="longitud"></p>
-    <p id="población"></p>
-    <p id="región"></p>
-    <p id="capital"></p>
 
+    <div id="resultado">
+        <p id="ciudad"></p>
+        <p id="pais"></p>
+        <p id="latitud"></p>
+        <p id="longitud"></p>
+        <p id="población"></p>
+        <p id="capital"></p>
+
+    </div>
 </div>
 
+    
+
 </body>
+
 </html>
-
-

@@ -1,5 +1,7 @@
 img{
-    width: 30%;
+    width: 300px;
+    height: 300px;
+    margin: auto
 }
 
 input{
@@ -8,4 +10,50 @@ input{
     font-size: 19px;
     align-items: center;
     margin-left: 40%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#añadir{
+    background-color: #d2d2d2;
+    height: 30px;
+    width: 150px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 1.5em;
+}
+
+#buscadorporpais{
+    background-color: #c94343;
+    height: 30px;
+    width: 230px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-left: 110em;
+    margin-top: 1em;
+    
+}
+
+#buscarporpais{
+    background-color: #58c1c9;
+    height: 30px;
+    width: 150px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+}
+
+body{
+    align-content: center;
+}
+
+.info{
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
