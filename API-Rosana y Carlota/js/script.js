@@ -1,14 +1,11 @@
 document.getElementById("hola").style.display = "none";
-
+document.getElementById("resultado").style.display = "none";
 
 document.getElementById("añadir").addEventListener('click', function(){
     let name = document.getElementById("name").value
+    document.getElementById("body").style = 'background-color: #a29ffe'
        
-    document.getElementById("ciudad").style.display = "none";
-    document.getElementById("pais").style.display = "none";
-    document.getElementById("población").style.display = "none";
-    document.getElementById("latitud").style.display = "none";
-    document.getElementById("longitud").style.display = "none";
+    
     
    
     
@@ -615,8 +612,8 @@ document.getElementById("añadir").addEventListener('click', function(){
             result[0].country = "Rusia"
          }
             console.log(result);
-
-            
+            document.getElementById("resultado").style.display = "block";
+           
             document.getElementById("ciudad").innerHTML = "Ciudad: " + (result[0].name) +".";
             document.getElementById("pais").innerHTML = "País: " + (result[0].country) +".";
             document.getElementById("población").innerHTML = "Población: " + (result[0].population) +" hab.";
@@ -639,11 +636,17 @@ document.getElementById("añadir").addEventListener('click', function(){
 document.getElementById("buscadorporpais").addEventListener('click', function(){   
    document.getElementById("buscarporciudad").style.display = "none";
    document.getElementById("hola").style.display = "block";
+   document.getElementById("body").style = 'background-color: #ff553b';
+
+   
       
   
 
 document.getElementById("buscarporpais").addEventListener('click', function(){
    let pais = document.getElementById("paisname").value;
+   document.getElementById("body").style = 'background-color: #bffe9f';
+   
+   
 
     $.ajax({
         method: 'GET',
@@ -676,3 +679,19 @@ document.getElementById("buscarporpais").addEventListener('click', function(){
 })
 
 })
+
+
+
+
+fetch("https://restcountries.com/v3.1/all")
+    .then(response => response.json())
+    .then(datos => {
+        let banderas = ''
+        for (let pais of datos) {
+            banderas += `<div class="tarjeta"><img src="${pais.flags.png}">
+                    
+               </div>`
+        }
+        const elemento = document.querySelector("#banderas")
+        elemento.innerHTML = banderas
+    })

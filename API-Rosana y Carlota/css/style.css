@@ -26,7 +26,7 @@ input{
 }
 
 #buscadorporpais{
-    background-color: #c94343;
+    background-color: #ffc4f5;
     height: 30px;
     width: 230px;
     font-family: "Poppins", sans-serif;
@@ -38,7 +38,7 @@ input{
 }
 
 #buscarporpais{
-    background-color: #58c1c9;
+    background-color: #92b2db;
     height: 30px;
     width: 150px;
     font-family: "Poppins", sans-serif;
@@ -49,6 +49,7 @@ input{
 
 body{
     align-content: center;
+    background-color: rgb(238, 204, 240);
 }
 
 .info{
@@ -56,4 +57,32 @@ body{
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
+}
+
+#resultado,
+#resultado2{
+    margin-left: 3em;
+}
+
+
+#banderas {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.tarjeta {
+    width: 400px;
+    margin: 20px;
+    border: 1px solid gray;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 10px;
 }
