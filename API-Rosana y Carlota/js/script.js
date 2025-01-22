@@ -688,16 +688,22 @@ document.getElementById("buscadorbanderas").addEventListener('click', function()
    .then(response => response.json())
    .then(datos => {
        let banderas = document.getElementById("banderas");
-       for (let pais of datos) {
-         document.getElementById("tarjeta") = '<img src="${pais.flags.png}">';
-         
-
-    document.getElementById("tarjeta").addEventListener('click', function(){
-      if(pais.name.common == "Switzerland"){
-         alert("FUNCIONA")
-      }
-   })
-       }
+       fetch("https://restcountries.com/v3.1/all")
+       .then(response => response.json())
+       .then(datos => {
+           let banderas = ''
+           for (let pais of datos) {
+               banderas += `<div class="tarjeta"><img src="${pais.flags.png}"><br>
+                       <p>Pais:${pais.name.common}</p>
+                       <p>Capital:${pais.capital}</p>
+                       <p>Población:${pais.population}</p>
+                       <p>Continente:${pais.region}</p>
+                  </div>`
+           }
+           const elemento = document.querySelector("#banderas")
+           elemento.innerHTML = banderas
+       })
+   
 
        
 
