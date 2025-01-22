@@ -1,6 +1,7 @@
 document.getElementById("hola").style.display = "none";
 document.getElementById("resultado").style.display = "none";
 
+
 document.getElementById("añadir").addEventListener('click', function(){
     let name = document.getElementById("name").value
     document.getElementById("body").style = 'background-color: #a29ffe'
@@ -680,18 +681,29 @@ document.getElementById("buscarporpais").addEventListener('click', function(){
 
 })
 
+document.getElementById("buscadorbanderas").addEventListener('click', function() {
+   document.getElementById("buscarporciudad").style.display = "none";
+   document.getElementById("buscadorporpais").style.display = "none";
+   fetch("https://restcountries.com/v3.1/all")
+   .then(response => response.json())
+   .then(datos => {
+       let banderas = document.getElementById("banderas");
+       for (let pais of datos) {
+         document.getElementById("tarjeta") = '<img src="${pais.flags.png}">';
+         
 
+    document.getElementById("tarjeta").addEventListener('click', function(){
+      if(pais.name.common == "Switzerland"){
+         alert("FUNCIONA")
+      }
+   })
+       }
 
+       
 
-fetch("https://restcountries.com/v3.1/all")
-    .then(response => response.json())
-    .then(datos => {
-        let banderas = ''
-        for (let pais of datos) {
-            banderas += `<div class="tarjeta"><img src="${pais.flags.png}">
-                    
-               </div>`
-        }
-        const elemento = document.querySelector("#banderas")
-        elemento.innerHTML = banderas
-    })
+       const elemento = document.querySelector("#banderas")
+       elemento.innerHTML = banderas
+   })
+}
+)
+
